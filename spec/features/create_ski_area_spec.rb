@@ -12,6 +12,9 @@ feature 'Create ski area page' do
 
   scenario 'User can create a ski area' do
     fill_in 'ski_area[ski_area_name]', with: "Telluride"
+    fill_in 'ski_area[country]', with: "USA"
+    fill_in 'ski_area[state]', with: "CO"
+    fill_in 'ski_area[logo_url]', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
     click_on 'Create Ski area'
 
     expect(page).to have_content("Telluride")
