@@ -1,8 +1,32 @@
 <h2>Create a Ski Area</h2>
 
 <%= form_for @ski_area do |f| %>
-  <%= f.label :ski_area_name %>:
+  <%= f.label :ski_area_name, "Ski Area Name" %>:
   <%= f.text_field :ski_area_name %><br />
+
+  <%= f.label :country %>:
+  <%= f.text_field :country %><br />
+
+  <%= f.label :state %>:
+  <%= f.text_field :state %><br />
+
+  <%= f.label :pct_black, "Black"%>:
+  <%= f.text_field :pct_black %><br />
+
+  <%= f.label :pct_blue, "Blue"%>:
+  <%= f.text_field :pct_blue %><br />
+
+  <%= f.label :pct_green, "Green"%>:
+  <%= f.text_field :pct_green %><br />
+
+  <%= f.label :logo_url, "Logo URL" %>:
+  <%= f.text_field :logo_url %><br />
+
+  <%= f.label :visited, "Visited Resort?" %>:
+  <%= f.select(:visited, options_for_select([['No', 'false'], ['Yes', 'true']], 'false')) %><br />
+
+  <%= f.label :skiable_acres, "Skiable Acres" %>:
+  <%= f.text_field :skiable_acres %><br />
 
   <%= f.submit %>
 <% end %>

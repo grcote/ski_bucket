@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502195734) do
+ActiveRecord::Schema.define(version: 20140502204935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "ski_areas", force: true do |t|
-    t.string "ski_area_name"
+    t.string  "ski_area_name"
+    t.string  "country"
+    t.string  "state"
+    t.integer "pct_black"
+    t.integer "pct_blue"
+    t.integer "pct_green"
+    t.string  "logo_url"
+    t.boolean "visited"
+    t.integer "skiable_acres"
   end
 
 end
