@@ -1,1 +1,8 @@
 <h2>Create a Ski Area</h2>
+
+<%= form_for @ski_area do |f| %>
+  <%= f.label :ski_area_name %>:
+  <%= f.text_field :ski_area_name %><br />
+
+  <%= f.submit %>
+<% end %>
