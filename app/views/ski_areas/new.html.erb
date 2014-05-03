@@ -1,6 +1,13 @@
 <h2>Create a Ski Area</h2>
 
+<p>|
+  <% @ski_area.errors.full_messages.each do |error| %>
+    <%= error %>&nbsp;|
+  <% end %>
+</p>
+
 <%= form_for @ski_area do |f| %>
+
   <%= f.label :ski_area_name, "Ski Area Name" %>:
   <%= f.text_field :ski_area_name %><br />
 

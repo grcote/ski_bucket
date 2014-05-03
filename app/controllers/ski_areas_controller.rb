@@ -4,7 +4,7 @@ class SkiAreasController < ApplicationController
   end
 
   def create
-    SkiArea.create(
+    @ski_area = SkiArea.create(
       ski_area_name: params[:ski_area][:ski_area_name],
       country: params[:ski_area][:country],
       state: params[:ski_area][:state],
@@ -16,7 +16,11 @@ class SkiAreasController < ApplicationController
       skiable_acres: params[:ski_area][:skiable_acres]
     )
 
-    redirect_to ski_areas_path
+    if @ski_area.errors.messages.empty?
+      redirect_to ski_areas_path
+    else
+      render :new
+    end
   end
 
   def index
