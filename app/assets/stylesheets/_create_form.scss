@@ -1,18 +1,62 @@
-form_label {
-  padding: 5px 0 1px 0;
+.form_label {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 16px;
+  line-height: 18px;
   display: block;
+  padding: 0 0 .15em 2em;
 }
 
-form_label_em {
-  padding: 0px 0 1px 0;
+.form_label_terrain {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 12px;
   font-style: italic;
+  line-height: 16px;
   display: block;
+  padding: 0 0 .15em 3em;
+}
+
+.field_style {
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 300;
+  line-height: 14px;
+  font-size: 14px;
+  letter-spacing: -1px;
+  display: block;
+  margin: 0 0 1em 3.5em;
+}
+
+.field_style_terrain {
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 300;
+  line-height: 14px;
+  font-size: 14px;
+  letter-spacing: -1px;
+  display: block;
+  margin: 0 0 1em 4.5em;
+}
+
+.submit_button {
+  color: white;
+  background: rgb(66, 184, 221);
+  font-size: 110%;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  margin: .4em 1em 1em 2em;
+}
+
+.submit_button:hover {
+  border-top-color: #28597a;
+  background: #28597a;
+  color: #ccc;
+}
+
+.submit_button:active {
+  border-top-color: #1b435e;
+  background: #1b435e;
+}
+
+#create_form_wrapper {
+  padding: 0em 0em 0em 0em;
 }
