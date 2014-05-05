@@ -15,7 +15,7 @@ feature 'Create ski area page' do
     fill_in 'ski_area[country]', with: "USA"
     fill_in 'ski_area[state]', with: "CO"
     fill_in 'ski_area[logo_url]', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
-    click_on 'Create Ski area'
+    click_on 'Create Ski Area'
 
     expect(page).to have_content("Telluride")
     expect(current_path).to eq(ski_areas_path)
@@ -26,7 +26,7 @@ feature 'Create ski area page' do
     fill_in 'ski_area[country]', with: "USA"
     fill_in 'ski_area[state]', with: "CO"
     fill_in 'ski_area[logo_url]', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
-    click_on 'Create Ski area'
+    click_on 'Create Ski Area'
 
     expect(page).to have_content("Ski area name can't be blank")
   end
