@@ -31,6 +31,12 @@ class SkiAreasController < ApplicationController
     redirect_to ski_area_path(@ski_area)
   end
 
+  def destroy
+    @ski_area = SkiArea.find(params[:id])
+    @ski_area.destroy
+    redirect_to ski_areas_path
+  end
+
   private
 
   def ski_area_strong_params

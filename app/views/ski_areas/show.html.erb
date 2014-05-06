@@ -10,3 +10,4 @@
 <p><%= @ski_area.skiable_acres %></p>
 
 <%= button_to "Update Ski Area", edit_ski_area_path(@ski_area), class: "submit_button", method: "get" %>
+<%= button_to "Delete Ski Area", ski_area_path(@ski_area), class: "submit_button", method: "delete" %>
