@@ -1,14 +1,4 @@
-<h2>Create a Ski Area</h2>
-
-<% if !@ski_area.errors.empty? %>
-  <div id="message_wrapper">
-    <div class="message_error">|
-    <% @ski_area.errors.full_messages.each do |error| %>
-      <%= error %>&nbsp;|
-    <% end %>
-    </div>
-  </div>
-<% end %>
+<h2>Update Ski Area</h2>
 
 <div id="create_form_wrapper">
   <%= form_for @ski_area do |f| %>
@@ -44,6 +34,6 @@
     <%= f.label :logo_url, "Logo URL", class: "form_label" %>
     <%= f.text_field :logo_url, class: "field_style", size: "65" %>
 
-    <%= f.submit "Create Ski Area", class: "submit_button" %>
+    <%= f.submit "Update Ski Area", class: "submit_button" %>
   <% end %>
 </div>

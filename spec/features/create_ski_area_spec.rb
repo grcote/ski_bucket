@@ -11,10 +11,10 @@ feature 'Create ski area page' do
   end
 
   scenario 'User can create a ski area' do
-    fill_in 'ski_area[ski_area_name]', with: "Telluride"
-    fill_in 'ski_area[country]', with: "USA"
-    fill_in 'ski_area[state]', with: "CO"
-    fill_in 'ski_area[logo_url]', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
+    fill_in 'Ski Area Name', with: "Telluride"
+    fill_in 'Country', with: "USA"
+    fill_in 'State/Province', with: "CO"
+    fill_in 'Logo URL', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
     click_on 'Create Ski Area'
 
     expect(page).to have_content("Telluride")
@@ -22,10 +22,10 @@ feature 'Create ski area page' do
   end
 
   scenario 'Create ski area page shows error if required field is blank' do
-    fill_in 'ski_area[ski_area_name]', with: ""
-    fill_in 'ski_area[country]', with: "USA"
-    fill_in 'ski_area[state]', with: "CO"
-    fill_in 'ski_area[logo_url]', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
+    fill_in 'Ski Area Name', with: ""
+    fill_in 'Country', with: "USA"
+    fill_in 'State/Province', with: "CO"
+    fill_in 'Logo URL', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
     click_on 'Create Ski Area'
 
     expect(page).to have_content("Ski area name can't be blank")
