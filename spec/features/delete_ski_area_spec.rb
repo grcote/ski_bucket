@@ -3,7 +3,7 @@ require_relative '../spec_helper'
 feature 'Delete ski area' do
 
   scenario 'User can delete a ski area' do
-    visit '/'
+    visit '/ski_areas'
     click_on 'Create a Ski Area'
     fill_in 'Ski Area Name', with: "Telluride"
     fill_in 'Country', with: "USA"

@@ -64,6 +64,26 @@ h3 {
   margin: .1em 0 .1em 0;
 }
 
+p {
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: -1px;
+}
+
+.homepage_image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -150px; /* Half the height */
+  margin-left: -200px; /* Half the width */
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;;
+}
+
 #message_wrapper {
   width: 90%;
   float: none;
@@ -82,4 +102,13 @@ h3 {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
+}
+
+.submit_button {
+  color: white;
+  background: rgb(66, 184, 221);
+  font-size: 110%;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  margin: .4em 1em 1em 2em;
 }
