@@ -4,8 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_strong_params)
-    redirect_to user_path(@user)
+    @user = User.new(user_strong_params)
+
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   def show
