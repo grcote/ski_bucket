@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+
+  <%= f.label :first_name, "First Name", class: "form_label" %>
+  <%= f.text_field :first_name, class: "field_style" %>
+
+  <%= f.label :last_name, "Last Name", class: "form_label" %>
+  <%= f.text_field :last_name, class: "field_style" %>
+
+  <%= f.label :email, "Email", class: "form_label" %>
+  <%= f.email_field :email, class: "field_style" %>
+
+  <%= f.label :password, "Password", class: "form_label" %>
+  <%= f.password_field :password, class: "field_style" %>
+
+  <%= f.label :password_confirmation, "Confirm Password", class: "form_label" %>
+  <%= f.password_field :password_confirmation, class: "field_style" %>
+
+  <%= f.submit "Create Account", class: "submit_button" %>
+
+<% end %>
