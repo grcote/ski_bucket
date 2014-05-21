@@ -1,35 +1,24 @@
 require 'spec_helper'
 
 feature 'Create a user acount' do
-  before do
-    visit '/'
-    click_on 'Create Account'
-  end
-
   scenario 'User can create an account' do
-    fill_in 'First Name', with: "Seth"
-    fill_in 'Last Name', with: "Gayer"
-    fill_in 'Email', with: "imacoder@nerd.com"
-    click_on 'Create Account'
-
-    expect(page).to have_content("Welcome Seth Gayer")
+    register_user(first_name: "Seth", last_name: "Geyer")
+    expect(page).to have_content("Welcome Seth Geyer")
   end
 
   scenario 'User cannot create an account without an email' do
-    fill_in 'Email', with: ""
-    click_on 'Create Account'
-
+    register_user(email: "")
     expect(page).to have_content("Email can't be blank")
   end
 
-  scenario 'User cannot create an account an email already in use' do
-    fill_in 'Email', with: "imacoder@nerd.com"
-    click_on 'Create Account'
-    visit '/'
-    click_on 'Create Account'
-    fill_in 'Email', with: "imacoder@nerd.com"
-    click_on 'Create Account'
-
+  scenario 'User cannot create an account with an email already in use' do
+    register_user
+    register_user
     expect(page).to have_content("Email has already been taken")
+  end
+
+  scenario 'User cannot create an account if password & confirmation do not match' do
+    register_user(password_confirmation: "password")
+    expect(page).to have_content("Password confirmation doesn't match Password")
   end
 end

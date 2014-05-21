@@ -1,4 +1,4 @@
-<h2>Create a Ski Area</h2>
+<h2 xmlns="http://www.w3.org/1999/html">Create a Ski Area</h2>
 
 <% if !@ski_area.errors.empty? %>
   <div id="message_wrapper">
@@ -10,40 +10,31 @@
   </div>
 <% end %>
 
-<div id="create_form_wrapper">
+<div class="two_third">
+  <fieldset>
   <%= form_for @ski_area do |f| %>
 
-    <%= f.label :ski_area_name, "Ski Area Name", class: "form_label" %>
-    <%= f.text_field :ski_area_name, class: "field_style", size: "50" %>
+    <p><%= f.label :ski_area_name, "Ski Area Name", class: "field" %>
+    <%= f.text_field :ski_area_name, class: "text_box_style", size: "50" %></p>
 
-    <%= f.label :country, "Country", class: "form_label" %>
-    <%= f.text_field :country, class: "field_style", size: "30" %>
+    <p><%= f.label :country, "Country", class: "field" %>
+    <%= f.text_field :country, class: "text_box_style", size: "30" %></p>
 
-    <%= f.label :state, "State/Province", class: "form_label" %>
-    <%= f.text_field :state, class: "field_style", size: "20" %>
+    <p><%= f.label :state, "State/Province", class: "field" %>
+    <%= f.text_field :state, class: "text_box_style", size: "20" %></p>
 
-    <div class="form_label">Terrain Difficulty</div>
-    <div class="form_label_terrain" style="margin-bottom:.5em">Enter whole numbers from 0 to 100</div>
-    <%= f.label :pct_black, "Percentage Black", class: "form_label_terrain" %>
-    <%= f.text_field :pct_black, class: "field_style_terrain", size: "8" %>
+      <p><%= f.label :skiable_acres, "Skiable Acres", class: "field" %>
+    <%= f.text_field :skiable_acres, class: "text_box_style", size: "13" %></p>
 
-    <%= f.label :pct_blue, "Percentage Blue", class: "form_label_terrain" %>
-    <%= f.text_field :pct_blue, class: "field_style_terrain", size: "8"%>
-
-    <%= f.label :pct_green, "Percentage Green", class: "form_label_terrain"%>
-    <%= f.text_field :pct_green, class: "field_style_terrain", size: "8"  %>
-
-    <%= f.label :skiable_acres, "Skiable Acres", class: "form_label" %>
-    <%= f.text_field :skiable_acres, class: "field_style", size: "13" %>
-
-    <%= f.label :visited, "Visited Resort?", class: "form_label" %>
-    <div class="field_style">
+    <%= f.label :visited, "Visited Resort?", class: "field" %>
+    <div class="text_box_style">
       <%= f.select(:visited, options_for_select([['No', 'false'], ['Yes', 'true']], 'false')) %>
     </div>
 
-    <%= f.label :logo_url, "Logo URL", class: "form_label" %>
-    <%= f.text_field :logo_url, class: "field_style", size: "65" %>
+    <p><%= f.label :logo_url, "Logo URL", class: "field" %>
+    <%= f.text_field :logo_url, class: "text_box_style", size: "65" %></p>
 
     <%= f.submit "Create Ski Area", class: "submit_button" %>
   <% end %>
+  </fieldset>
 </div>

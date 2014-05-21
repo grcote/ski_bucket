@@ -1,0 +1,32 @@
+fieldset {
+    width: 66%;
+    border-width: 0;
+}
+
+.field {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: right;
+    width: 33%;
+    float: left;
+    padding-top: .45em;
+}
+
+.text_box_style {
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 300;
+    line-height: 14px;
+    font-size: 14px;
+    letter-spacing: -1px;
+    width: 33%;
+    float: left;
+    margin: 0 0 .5em .75em;
+}
+
+fieldset p {
+    clear: both;
+
+}
+

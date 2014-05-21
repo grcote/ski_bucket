@@ -1,0 +1,20 @@
+.submit_button {
+    color: white;
+    background: rgb(66, 184, 221);
+    width: 180px;
+    font-size: 110%;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin: .45em 1em 0em 1em;
+}
+
+.submit_button:hover {
+    border-top-color: #28597a;
+    background: #28597a;
+    color: #ccc;
+}
+
+.submit_button:active {
+    border-top-color: #1b435e;
+    background: #1b435e;
+}
