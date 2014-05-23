@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 2.1.1
+before_script:
+- cp config/database.yml.travis config/database.yml
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+script:
+- bundle exec rake spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: Hkk95Eh/4kk+K66NoKpVgTF7KTIp0ij/DiJZ63e0m4uci9NU+JY2/NsVRPLZSfWJHTkr9pLOh3WWDlgqZUc1DzIeT7CwDoww+ltIb0e4eBuaz5HmNIT03NUIOl2RLJtdmGDt59kwXiR8+XLnCgljsUJEQ3z3eKYkXid4ZiWfFLA=
+  app: ski-bucket-staging
+  on:
+    repo: grcote/ski-bucket
+  run:
+    - "bundle exec rake db:migrate"
