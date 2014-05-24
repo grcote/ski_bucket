@@ -32,4 +32,9 @@ feature 'Create a user acount' do
     expect(page).to have_content("Email")
     expect(page).to have_link("Sign Up")
   end
+
+  scenario 'A user can login' do
+    login_user
+    expect(page).to have_content("Hello Seth, let's turn and burn!")
+  end
 end

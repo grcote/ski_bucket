@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_strong_params)
     if @user.save
       session[:user_id] = @user.id
+      flash[:success] = "Hello #{@user.first_name}, let's turn and burn!"
       redirect_to root_path
     else
       render :new
