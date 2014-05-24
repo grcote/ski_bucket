@@ -26,4 +26,10 @@ feature 'Create a user acount' do
     register_user
     expect(page).to have_content("Hello Seth, let's turn and burn!")
   end
+
+  scenario 'User has option to login or create an account' do
+    visit '/'
+    expect(page).to have_content("Email")
+    expect(page).to have_link("Sign Up")
+  end
 end
