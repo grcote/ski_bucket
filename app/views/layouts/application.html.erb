@@ -11,6 +11,9 @@
   <link href="http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<nav>
+  <%= link_to "Sign Out", logout_path %>
+</nav>
 <%= render partial: "shared/messages" %>
 <h1>Gerard's Ski Area Bucket List</h1>
   <%= yield %>

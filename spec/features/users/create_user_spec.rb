@@ -37,4 +37,10 @@ feature 'Create a user acount' do
     login_user
     expect(page).to have_content("Hello Seth, let's turn and burn!")
   end
+
+  scenario 'A user can logout' do
+    login_user
+    click_on "Sign Out"
+    expect(page).to have_content("See you on the slopes!")
+  end
 end

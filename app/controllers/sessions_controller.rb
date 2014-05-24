@@ -14,4 +14,10 @@ class SessionsController < ApplicationController
       render "new"
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    flash[:success] = "See you on the slopes!"
+    redirect_to root_path
+  end
 end
