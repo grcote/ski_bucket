@@ -1,0 +1,73 @@
+#topHeader {
+  width: 90%;
+  background-color: darkslategray;
+  margin: 0 auto;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+#topHeader nav {
+  color: lightgray;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100%;
+}
+
+#topHeader nav h1 {
+  display: inline-block;
+  font-size: 3em;
+  padding: 0;
+  margin: .25em 0 .25em .3em;
+}
+
+#topHeader nav ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+
+#topHeader nav ul li {
+  list-style: none;
+  padding: .25em .15em 0 0;
+  float: right;
+  position: relative;
+  width: 8em;
+  font-family: 'Roboto', sans-serif;
+}
+
+#topHeader nav ul li a {
+  font-family: 'Roboto', sans-serif;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+#topHeader nav ul li a:hover {
+  color: red;
+}
+
+#topHeader nav ul li ul {
+  position: absolute;
+  visibility: hidden;
+}
+
+#topHeader nav ul li:hover ul {
+  visibility: visible;
+  background-color: darkslategray;
+}
+
+#topHeader nav ul li ul li a {
+  font-family: 'Roboto', sans-serif;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+#topHeader nav ul li ul li a:hover {
+  color: red;
+}
+
+#topHeader .settings_image {
+  padding-right: 10px;
+  padding-top: 4px;
+  width: 25px;
+}
+

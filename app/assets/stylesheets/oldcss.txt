@@ -1,0 +1,241 @@
+application.css
+
+/*
+ *= require_tree ./vendor
+ *= require_tree ./modules
+ *= require_self
+ */
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 50px;
+    font-size: 47px;
+    padding: .1em 0 .1em .25em;
+    margin: .1em 0 .1em 0;
+}
+
+h2 {
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 600;
+    line-height: 32px;
+    font-size: 29px;
+    letter-spacing: -1px;
+    padding: .1em 0 .5em .25em;
+    margin: .1em 0 .1em 0;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    line-height: 23px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: .1em 0 .1em .25em;
+    margin: .1em 0 .1em 0;
+}
+
+p {
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+
+.homepage_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -150px; /* Half the height */
+    margin-left: -200px; /* Half the width */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    clear: both;
+    width: 100%;
+}
+
+
+BUTTONS
+
+.submit_button {
+    color: white;
+    background: rgb(66, 184, 221);
+    width: 180px;
+    font-size: 110%;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin: .45em 1em 0em 1em;
+}
+
+.submit_button:hover {
+    border-top-color: #28597a;
+    background: #28597a;
+    color: #ccc;
+}
+
+.submit_button:active {
+    border-top-color: #1b435e;
+    background: #1b435e;
+}
+
+
+COLUMNS
+
+/* ----- =columns ----- */
+
+.one_half {
+    width: 48%;
+}
+
+.one_third {
+    width: 32%;
+}
+
+.two_third {
+    width: 65%;
+}
+
+.one_fourth {
+    width: 24%;
+}
+
+.three_fourth {
+    width: 74%;
+}
+
+.full_column {
+    width: 99%;
+}
+
+.one_half, .one_third, .two_third, .three_fourth, .one_fourth, .full_column {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.resetColumnSet {
+    clear: both;
+}
+
+
+CREATE SKI AREA FORM
+
+.form_label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    display: block;
+    padding: 0 0 .15em 2em;
+}
+
+.form_label_terrain {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 16px;
+    display: block;
+    padding: 0 0 .15em 3em;
+}
+
+.field_style {
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 300;
+    line-height: 14px;
+    font-size: 14px;
+    letter-spacing: -1px;
+    display: block;
+    margin: 0 0 1em 3.5em;
+}
+
+.field_style_terrain {
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 300;
+    line-height: 14px;
+    font-size: 14px;
+    letter-spacing: -1px;
+    display: block;
+    margin: 0 0 1em 4.5em;
+}
+
+#create_form_wrapper {
+    padding: 0em 0em 0em 0em;
+}
+
+
+CREATE USER FORM
+
+fieldset {
+    width: 66%;
+    border-width: 0;
+}
+
+.field {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: right;
+    width: 33%;
+    float: left;
+    padding-top: .45em;
+}
+
+.text_box_style {
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 300;
+    line-height: 14px;
+    font-size: 14px;
+    letter-spacing: -1px;
+    width: 33%;
+    float: left;
+    margin: 0 0 .5em .75em;
+}
+
+fieldset p {
+    clear: both;
+
+}
+
+
+MESSAGES
+
+#message_wrapper {
+    width: 90%;
+    float: none;
+    border-style: hidden;
+    border-width: 0;
+    padding: 0em 0em .25em .25em;
+    margin: 0em 1em 1em 1em;
+}
+
+.message_error {
+    text-indent: 1em;
+    line-height: 25pt;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+}

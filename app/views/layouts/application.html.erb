@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gerard's Ski Area Bucket List</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>The Ski Bucket</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-  <link href="http://fonts.googleapis.com/css?family=Oswald:700|Droid+Serif:400,700italic" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Oswald:700|Droid+Serif:400,700italic" rel="stylesheet" type="text/css"/>
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href="http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css"/>
 </head>
+
 <body>
-<nav>
-  <%= link_to "Sign Out", logout_path %>
-</nav>
-<%= render partial: "shared/messages" %>
-<h1>Gerard's Ski Area Bucket List</h1>
-  <%= yield %>
+<div id="body_container">
+  <%= render partial: "shared/main_header" %>
+
+  <%= render partial: "shared/main_nav" %>
+
+  <%= render partial: "shared/messages" %>
+
+  <div class="mainContent">
+    <section>
+      <%= yield %>
+    </section>
+  </div>
+
+  <%= render partial: "shared/main_footer" %>
+
+</div>
 </body>
 </html>

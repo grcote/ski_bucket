@@ -7,11 +7,12 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      session[:login_time] = Time.now
       flash[:success] = "Hello #{user.first_name}, let's turn and burn!"
       redirect_to root_url
     else
       flash.now[:error] = "Invalid Email and Password Combination"
-      render "new"
+      render "pages/index"
     end
   end
 

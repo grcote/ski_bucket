@@ -1,0 +1,40 @@
+#validation_error_wrapper {
+  width: 90%;
+  float: none;
+  margin: 0 auto;
+}
+
+.validation_error {
+  line-height: 25pt;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: .4em;
+  background-color: lightcoral;
+  border: thin solid darkred;
+  color: darkred;
+}
+
+#flash_alert_wrapper {
+  width: 90%;
+  float: none;
+  margin: 0 auto;
+}
+.alert-success {
+  line-height: 25pt;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: .4em;
+  background-color: lightgreen;
+  border: thin solid darkgreen;
+  color: darkgreen;
+}
+
+.alert-error {
+  line-height: 25pt;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: .4em;
+  background-color: lightcoral;
+  border: thin solid darkred;
+  color: darkred;
+}

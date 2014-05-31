@@ -12,7 +12,7 @@ feature 'Create a user acount' do
   end
 
   scenario 'User cannot create an account with an email already in use' do
-    register_user
+    create_user
     register_user
     expect(page).to have_content("Email has already been taken")
   end
@@ -40,7 +40,7 @@ feature 'Create a user acount' do
 
   scenario 'A user can logout' do
     login_user
-    click_on "Sign Out"
+    click_on "Logout"
     expect(page).to have_content("See you on the slopes!")
   end
 end

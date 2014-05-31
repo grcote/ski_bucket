@@ -1,0 +1,23 @@
+<header id="topHeader">
+  <nav>
+    <h1>The Ski Bucket</h1>
+    <ul>
+      <% if logged_in? %>
+        <% user = current_user %>
+        <li style="text-align: left">
+          Hello, <%= user.first_name %>
+        </li>
+        <li style="text-align: right;"><%= image_tag "settings.png", class: "settings_image", alt: "settings_icon" %>
+          <ul>
+            <li><a href="#">My Account</a></li>
+            <li><%= link_to "Logout", logout_path %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Login/Signup", login_path %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

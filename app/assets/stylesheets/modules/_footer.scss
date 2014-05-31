@@ -1,0 +1,19 @@
+#mainFooter {
+    margin: 0 auto;
+    position:fixed;
+    left:6%;
+    bottom:0px;
+    background-color: darkslategray;
+    color: lightgray;
+    width: 88.1%;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#mainFooter .footerText {
+    float:right;
+    padding: .5em 0;
+    margin-right: 1em;
+    font-family: 'Cantarell', sans-serif;
+}

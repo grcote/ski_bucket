@@ -1,32 +1,31 @@
-fieldset {
-    width: 66%;
-    border-width: 0;
+.form_container {
+  text-align: right;
 }
 
-.field {
+.field_container {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.label_style {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 18px;
-    text-align: right;
+    letter-spacing: -1px;
     width: 33%;
     float: left;
-    padding-top: .45em;
+    text-align: right;
+    padding: 7px 10px 0 0;
+    margin: 5px 0 0 0;
 }
 
-.text_box_style {
+.field_style {
     font-family: 'Cantarell', sans-serif;
     font-weight: 300;
     line-height: 14px;
     font-size: 14px;
     letter-spacing: -1px;
-    width: 33%;
-    float: left;
-    margin: 0 0 .5em .75em;
+    width: 67%;
+    margin: 5px 0 0 0;
 }
-
-fieldset p {
-    clear: both;
-
-}
-
