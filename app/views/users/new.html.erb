@@ -1,37 +1,37 @@
 <h2>Create a Ski Bucket Account</h2>
 
-<% if !@user.errors.empty? %>
-  <div id="message_wrapper">
-    <div class="message_error">|
-      <% @user.errors.full_messages.each do |error| %>
-        <%= error %>&nbsp;|
-      <% end %>
+<div class="form_container">
+
+  <%= form_for @user do |f| %>
+
+    <div class="field_container">
+      <%= f.label :first_name, "First Name", class: "label_style", autofocus: 'autofocus' %>
+      <%= f.text_field :first_name, class: "field_style" %>
     </div>
-  </div>
-<% end %>
 
-<div class="two_third">
-  <fieldset>
-    <%= form_for @user do |f| %>
+    <div class="field_container">
+      <%= f.label :last_name, "Last Name", class: "label_style" %>
+      <%= f.text_field :last_name, class: "field_style" %>
+    </div>
 
-      <p><%= f.label :first_name, "First Name", class: "field" %>
-        <%= f.text_field :first_name, class: "text_box_style" %></p>
+    <div class="field_container">
+      <%= f.label :email, "Email", class: "label_style" %>
+      <%= f.email_field :email, class: "field_style" %>
+    </div>
 
-      <p><%= f.label :last_name, "Last Name", class: "field" %>
-        <%= f.text_field :last_name, class: "text_box_style" %></p>
+    <div class="field_container">
+      <%= f.label :password, "Password", class: "label_style" %>
+      <%= f.password_field :password, class: "field_style" %>
+    </div>
 
-      <p><%= f.label :email, "Email", class: "field" %>
-        <%= f.email_field :email, class: "text_box_style" %></p>
+    <div class="field_container">
+      <%= f.label :password_confirmation, "Confirm Password", class: "label_style" %>
+      <%= f.password_field :password_confirmation, class: "field_style" %>
+    </div>
 
-      <p><%= f.label :password, "Password", class: "field" %>
-        <%= f.password_field :password, class: "text_box_style" %></p>
+    <div class="field_container">
+      <%= f.submit "Create Account", class: "button blue" %>
+    </div>
 
-      <p><%= f.label :password_confirmation, "Confirm Password", class: "field" %>
-        <%= f.password_field :password_confirmation, class: "text_box_style" %></p>
-      <div style="width: 64%; float: right">
-        <p><%= f.submit "Create Account", class: "submit_button" %></p>
-      </div>
-
-    <% end %>
-  </fieldset>
+  <% end %>
 </div>

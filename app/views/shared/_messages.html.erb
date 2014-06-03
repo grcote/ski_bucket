@@ -10,6 +10,18 @@
   <% end %>
 <% end %>
 
+<% if @ski_area %>
+  <% if !@ski_area.errors.empty? %>
+    <div id="validation_error_wrapper">
+      <div class="validation_error">|
+        <% @ski_area.errors.full_messages.each do |error| %>
+          <%= error %>&nbsp;|
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 <% if flash %>
   <div id="flash_alert_wrapper">
     <% flash.each do |key, value| %>

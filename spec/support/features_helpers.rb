@@ -1,8 +1,8 @@
 def register_user(updated_attributes = {})
   default_attributes = {
-    :first_name => 'Seth',
-    :last_name => 'Geyer',
-    :email => 'sethgeyer@example.com',
+    :first_name => 'Glenn',
+    :last_name => 'Plake',
+    :email => 'glennplake@skier.com',
     :password => 'iluvunicorns',
     :password_confirmation => 'iluvunicorns',
   }

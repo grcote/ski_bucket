@@ -9,7 +9,7 @@
         </li>
         <li style="text-align: right;"><%= image_tag "settings.png", class: "settings_image", alt: "settings_icon" %>
           <ul>
-            <li><a href="#">My Account</a></li>
+            <li><%= link_to "My Account", user_path(user) %></li>
             <li><%= link_to "Logout", logout_path %></li>
           </ul>
         </li>

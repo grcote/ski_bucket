@@ -1,0 +1,17 @@
+<h2>Update Account Email</h2>
+
+<div class="form_container">
+
+  <%= form_for @user do |f| %>
+
+    <div class="field_container">
+      <%= f.label :email, "Enter new Email", class: "label_style" %>
+      <%= f.text_field :email, class: "field_style" %>
+    </div>
+
+    <div class="field_container">
+      <%= f.submit "Update Email", class: "button blue" %>
+    </div>
+
+  <% end %>
+</div>

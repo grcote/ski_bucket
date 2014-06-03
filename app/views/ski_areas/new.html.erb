@@ -1,40 +1,38 @@
 <h2>Create a Ski Area</h2>
 
-<% if !@ski_area.errors.empty? %>
-  <div id="message_wrapper">
-    <div class="message_error">|
-    <% @ski_area.errors.full_messages.each do |error| %>
-      <%= error %>&nbsp;|
-    <% end %>
-    </div>
-  </div>
-<% end %>
-
-<div class="two_third">
-  <fieldset>
+<div class="form_container">
   <%= form_for @ski_area do |f| %>
 
-    <p><%= f.label :ski_area_name, "Ski Area Name", class: "field" %>
-    <%= f.text_field :ski_area_name, class: "text_box_style", size: "50" %></p>
+    <div class="field_style">
+      <%= f.label :ski_area_name, "Ski Area Name", class: "label_style", autofocus: 'autofocus' %>
+      <%= f.text_field :ski_area_name, class: "text_box_style", size: "50" %>
+    </div>
 
-    <p><%= f.label :country, "Country", class: "field" %>
-    <%= f.text_field :country, class: "text_box_style", size: "30" %></p>
+    <div class="field_style">
+      <%= f.label :country, "Country", class: "label_style" %>
+      <%= f.text_field :country, class: "field_style", size: "30" %>
+    </div>
 
-    <p><%= f.label :state, "State/Province", class: "field" %>
-    <%= f.text_field :state, class: "text_box_style", size: "20" %></p>
+    <div class="field_style">
+      <%= f.label :state, "State/Province", class: "label_style" %>
+      <%= f.text_field :state, class: "field_style", size: "20" %>
+    </div>
 
-      <p><%= f.label :skiable_acres, "Skiable Acres", class: "field" %>
-    <%= f.text_field :skiable_acres, class: "text_box_style", size: "13" %></p>
+    <div class="field_style">
+      <%= f.label :skiable_acres, "Skiable Acres", class: "label_style" %>
+      <%= f.text_field :skiable_acres, class: "field_style", size: "13" %>
+    </div>
 
-    <%= f.label :visited, "Visited Resort?", class: "field" %>
-    <div class="text_box_style">
+    <%= f.label :visited, "Visited Resort?", class: "label_style" %>
+    <div class="field_style">
       <%= f.select(:visited, options_for_select([['No', 'false'], ['Yes', 'true']], 'false')) %>
     </div>
 
-    <p><%= f.label :logo_url, "Logo URL", class: "field" %>
-    <%= f.text_field :logo_url, class: "text_box_style", size: "65" %></p>
+    <div class="field_style">
+      <%= f.label :logo_url, "Logo URL", class: "label_style" %>
+      <%= f.text_field :logo_url, class: "field_style", size: "65" %>
+    </div>
 
-    <%= f.submit "Create Ski Area", class: "submit_button" %>
+    <%= f.submit "Create Ski Area", class: "button blue" %>
   <% end %>
-  </fieldset>
 </div>

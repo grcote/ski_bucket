@@ -15,7 +15,21 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+  end
+
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update_attributes(user_strong_params)
+      flash[:success] = "Account email successfully updated to #{@user.email}"
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   private

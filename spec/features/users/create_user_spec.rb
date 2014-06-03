@@ -24,7 +24,7 @@ feature 'Create a user acount' do
 
   scenario 'When a user successfully creates an account, they are logged in' do
     register_user
-    expect(page).to have_content("Hello Seth, let's turn and burn!")
+    expect(page).to have_content("Hello Glenn, let's turn and burn!")
   end
 
   scenario 'User has option to login or create an account' do
@@ -35,12 +35,21 @@ feature 'Create a user acount' do
 
   scenario 'A user can login' do
     login_user
-    expect(page).to have_content("Hello Seth, let's turn and burn!")
+    expect(page).to have_content("Hello Glenn, let's turn and burn!")
   end
 
   scenario 'A user can logout' do
     login_user
-    click_on "Logout"
+    click_on 'Logout'
     expect(page).to have_content("See you on the slopes!")
+  end
+
+  scenario 'A user can change their account email' do
+    login_user
+    click_on 'My Account'
+    click_on 'Update Email'
+    fill_in 'Enter new Email', with: "gp@bigair.com"
+    click_on 'Update Email'
+    expect(page).to have_content("Account email successfully updated to gp@bigair.com")
   end
 end
