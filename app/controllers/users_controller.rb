@@ -32,6 +32,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current_user
+    @user.destroy
+    log_user_out
+    flash[:success] = "Thanks and remember, there's no waiting for friends on a powder day!"
+    redirect_to root_path
+  end
+
   private
 
   def user_strong_params

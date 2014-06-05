@@ -12,4 +12,10 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user != nil
   end
+
+  helper_method :log_user_out
+  def log_user_out
+    session[:user_id] = nil
+    session[:expire_time] = nil
+  end
 end
