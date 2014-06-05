@@ -14,6 +14,12 @@ describe User do
     expect(another_user.errors[:email]).to match_array ["has already been taken"]
   end
 
+  it 'should not be valid with an email less than eight characters' do
+    user = create_user(password: "passwor", password_confirmation: "passwor")
+    user.valid?
+    expect(user.errors[:password]).to match_array ["is too short (minimum is 8 characters)"]
+  end
+
   it 'should not be valid with a confirmation mismatch' do
     user = create_user(password_confirmation: "beta")
     user.valid?

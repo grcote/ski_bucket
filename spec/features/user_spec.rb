@@ -22,6 +22,11 @@ feature 'Create a user acount' do
     expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
+  scenario 'User cannot create an account with a password less than 6 characters' do
+    register_user(password: "passwor", password_confirmation: "passwor")
+    expect(page).to have_content("Password is too short")
+  end
+
   scenario 'When a user successfully creates an account, they are logged in' do
     register_user
     expect(page).to have_content("Hello Glenn, let's turn and burn!")
@@ -51,5 +56,19 @@ feature 'Create a user acount' do
     fill_in 'Enter new Email', with: "gp@bigair.com"
     click_on 'Update Email'
     expect(page).to have_content("Account email successfully updated to gp@bigair.com")
+  end
+
+  scenario 'A user can delete their account' do
+    login_user
+    click_on 'My Account'
+    click_on 'Delete Account'
+    expect(page).to have_content("Thanks and remember, there's no waiting for friends on a powder day!")
+  end
+
+  scenario 'A welcome email is sent to a new user' do
+    mail_sent = ActionMailer::Base.deliveries.length
+    register_user
+
+    expect(ActionMailer::Base.deliveries.length).to eq(mail_sent + 1)
   end
 end

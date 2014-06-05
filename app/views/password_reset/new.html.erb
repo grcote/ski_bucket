@@ -1,0 +1,16 @@
+<h2>Reset Password</h2>
+
+<%= form_tag '/password_reset', method: 'post' do %>
+
+    <div class="field_container">
+      <%= label_tag :email, 'Email', class: 'label_style' %>
+      <%= email_field_tag :email, params[:email], class: 'field_style' %>
+    </div>
+
+    <div class="field_container">
+      <%= submit_tag "Reset Password", class: 'button blue' %>
+    </div>
+
+<% end %>
+
+

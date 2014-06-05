@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_strong_params)
     if @user.save
+      Notifier.welcome_email(@user).deliver
       session[:user_id] = @user.id
       flash[:success] = "Hello #{@user.first_name}, let's turn and burn!"
       redirect_to root_path

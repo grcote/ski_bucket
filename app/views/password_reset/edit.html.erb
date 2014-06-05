@@ -1,0 +1,23 @@
+<h2>Reset Password</h2>
+
+<h3>For account: <%= @user.email %></h3>
+
+<%= form_for :user, url: '/password_reset', method: :put  do |f| %>
+
+  <%= hidden_field(:user, :id) %>
+
+  <div class='field_container'>
+    <%= f.label :password, 'Password', class: 'label_style' %>
+    <%= f.password_field :password, class: 'field_style' %>
+  </div>
+
+  <div class='field_container'>
+    <%= f.label :password_confirmation, 'Confirm Password', class: 'label_style' %>
+    <%= f.password_field :password_confirmation, class: 'field_style' %>
+  </div>
+
+  <div class='field_container'>
+    <%=f.submit 'Reset Password', class: 'button blue' %>
+  </div>
+
+<% end %>
