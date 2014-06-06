@@ -4,7 +4,7 @@ describe User do
   it 'fails validation with no email address' do
     user = create_user(email: "")
     user.valid?
-    expect(user.errors[:email]).to match_array ["can't be blank"]
+    expect(user.errors[:email]).to match_array ["can't be blank", "is invalid"]
   end
 
   it 'fails validation with a previously used email address' do
@@ -30,5 +30,11 @@ describe User do
     user = create_user(first_name: "")
     user.valid?
     expect(user.errors[:first_name]).to match_array ["can't be blank"]
+  end
+
+  it 'should not be valid without an acceptable email' do
+    user = create_user(email: "glennplake@skier")
+    user.valid?
+    expect(user.errors[:email]).to match_array ["is invalid"]
   end
 end
