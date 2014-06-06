@@ -24,11 +24,7 @@ class User < ActiveRecord::Base
     decrypter = Verifier.new.create_verifier
     decrypted_hash = decrypter.verify(token)
 
-    if Time.now < decrypted_hash[:expiration]
-      @user = User.find(decrypted_hash[:user_id])
-    else
-      'expired_token'
-    end
+    Time.now < decrypted_hash[:expiration] ? @user = User.find(decrypted_hash[:user_id]) : @user = nil
 
   rescue
     @user = nil

@@ -12,19 +12,11 @@ class PasswordResetController < ApplicationController
 
   def edit
     password_reset_user = User.new.verify_user(params[:token])
+    flash[:error] = "Invalid information provided, click \"Forgot Password?\" again."
+    redirect_to root_path and return unless password_reset_user
 
-    if password_reset_user
-      if password_reset_user == 'expired_token'
-        flash[:error] = "Your token has expired, click \"Forgot Password?\" again."
-        render 'pages/index'
-      else
-        @user = password_reset_user
-        flash[:success] = "Enter your new password."
-      end
-    else
-      flash[:error] = "Invalid information provided, click \"Forgot Password?\" again."
-      redirect_to root_path
-    end
+    @user = password_reset_user
+    flash[:success] = "Enter your new password."
   end
 
   def update
