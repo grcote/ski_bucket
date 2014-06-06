@@ -1,6 +1,8 @@
 language: ruby
 rvm:
 - 2.1.1
+env:
+  - VERIFICATION_TOKEN=foo
 before_script:
 - cp config/database.yml.travis config/database.yml
 - bundle exec rake db:create
