@@ -11,11 +11,14 @@ class PasswordResetController < ApplicationController
   end
 
   def edit
-    password_reset_user = User.new.verify_user(params[:token])
-    flash[:error] = "Invalid information provided, click \"Forgot Password?\" again."
-    redirect_to root_path and return unless password_reset_user
-
-    @user = password_reset_user
+    begin
+      user_id = SecureTokens.verify_password_reset_token(params[:token])
+      @user = User.find(user_id)
+    rescue SecureTokens::InvalidPasswordResetToken
+      flash[:error] = "Invalid information provided, click \"Forgot Password?\" again."
+      redirect_to root_path
+      return
+    end
     flash[:success] = "Enter your new password."
   end
 
