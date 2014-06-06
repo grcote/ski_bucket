@@ -25,4 +25,10 @@ describe User do
     user.valid?
     expect(user.errors[:password_confirmation]).to match_array ["doesn't match Password"]
   end
+
+  it 'should not be valid without a first name' do
+    user = create_user(first_name: "")
+    user.valid?
+    expect(user.errors[:first_name]).to match_array ["can't be blank"]
+  end
 end
