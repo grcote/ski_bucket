@@ -1,5 +1,4 @@
 <div class="form_container">
-
   <%= form_tag login_path do %>
 
     <div class="field_container">
@@ -15,14 +14,13 @@
     <div class="field_container">
       <%= submit_tag "Sign In", class: 'button blue' %>
     </div>
-
-
-
   <% end %>
+
+  <div class="field_container" style="margin-top: 1em;">
+    <%= link_to "Forgot Password?", password_reset_path %>
+  </div>
+
+  <div class="field_container">
+    <p style="text-align: right; font-size: .75em; margin-top: 2em;">Want a Ski Bucket? Then <%= link_to "Sign Up", new_user_path %>
+  </div>
 </div>
-
-<div class="field_container">
-  <%= link_to "Forgot Password?", password_reset_path %>
-      </div>
-
-<p style="text-align: center">Want a Ski Bucket? Then <%= link_to "Sign Up", new_user_path %></p>
