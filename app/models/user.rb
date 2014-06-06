@@ -11,15 +11,6 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def reset_password_token
-    token = Verifier.new.create_verifier
-    token.generate({:user_id => self.id, expiration: 2.hours.from_now})
-  end
-
-  def send_password_reset
-    Notifier.password_reset_email(self).deliver
-  end
-
   def verify_user(token)
     decrypter = Verifier.new.create_verifier
     decrypted_hash = decrypter.verify(token)

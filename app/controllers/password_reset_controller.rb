@@ -4,9 +4,9 @@ class PasswordResetController < ApplicationController
   end
 
   def create
-    user = User.find_by_email(params[:email])
-    user.send_password_reset if user
-    flash[:success] = "Check the account you provided for instructions (#{user.email})."
+    user = User.find_by(email: params[:email])
+    Notifier.password_reset_email(user, SecureTokens.password_reset_for(user)).deliver if user.present?
+    flash[:success] = "Check the account you provided for instructions (#{params[:email]})."
     redirect_to root_path
   end
 

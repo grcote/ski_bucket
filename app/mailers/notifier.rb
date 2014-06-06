@@ -6,9 +6,9 @@ class Notifier < ActionMailer::Base
     mail( :to => @user.email, :subject => 'Thank you for opening a Ski Bucket!' )
   end
 
-  def password_reset_email(user)
+  def password_reset_email(user, token)
     @user = user
-    @reset_password_token = @user.reset_password_token
+    @reset_password_token = token
     mail(to: user.email, subject: 'You have requested to reset your password')
   end
 end
