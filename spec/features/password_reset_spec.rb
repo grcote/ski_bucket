@@ -4,7 +4,7 @@ feature 'a user can reset their password' do
   scenario 'A user can reset their password' do
     user = create_user
     mail_sent = ActionMailer::Base.deliveries.length
-    visit '/'
+    visit root_path
     click_on 'Forgot Password?'
     fill_in 'Email', with: user.email
     click_on 'Reset Password'
@@ -24,7 +24,7 @@ feature 'a user can reset their password' do
 
     expect(page).to have_content("Success! Login with your updated password.")
 
-    visit '/'
+    visit root_path
     fill_in 'Email', with: 'glennplake@skier.com'
     fill_in 'Password', with: 'newpassword'
     click_on 'Sign In'

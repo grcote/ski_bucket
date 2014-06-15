@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 
 feature 'Update ski area page' do
   before do
-    visit '/ski_areas'
+    visit ski_areas_path
     click_on 'Create a Ski Area'
   end
 

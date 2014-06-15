@@ -33,7 +33,7 @@ feature 'Create a user acount' do
   end
 
   scenario 'User has option to login or create an account' do
-    visit '/'
+    visit root_path
     expect(page).to have_content("Email")
     expect(page).to have_link("Sign Up")
   end

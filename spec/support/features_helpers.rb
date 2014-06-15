@@ -9,7 +9,7 @@ def register_user(updated_attributes = {})
 
   attributes = default_attributes.merge(updated_attributes)
 
-  visit '/'
+  visit root_path
   click_on 'Sign Up'
   fill_in 'First Name', with: attributes[:first_name]
   fill_in 'Last Name', with: attributes[:last_name]
