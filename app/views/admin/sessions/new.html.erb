@@ -1,0 +1,20 @@
+<h1>Admin Login</h1>
+
+<div class="form_container">
+  <%= form_tag admin_login_path do %>
+
+    <div class="field_container">
+      <%= label_tag :email, 'Email', class: 'label_style' %>
+      <%= email_field_tag :email, params[:email], class: 'field_style', autofocus: 'autofocus' %>
+    </div>
+
+    <div class="field_container">
+      <%= label_tag :password, 'Password', class: 'label_style' %>
+      <%= password_field_tag 'password', nil, class: 'field_style' %>
+    </div>
+
+    <div class="field_container">
+      <%= submit_tag "Sign In", class: 'button blue' %>
+    </div>
+  <% end %>
+</div>

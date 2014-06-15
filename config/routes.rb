@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   post '/password_reset', to: 'password_reset#create'
   get '/password_reset', to: 'password_reset#edit', as: :edit_password_reset
   put '/password_reset', to: 'password_reset#update'
+
+  namespace :admin do
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+    get '/dashboard', to: 'dashboard#index'
+  end
 end

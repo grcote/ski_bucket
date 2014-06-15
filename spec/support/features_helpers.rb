@@ -21,8 +21,16 @@ end
 
 def login_user
   user = create_user
-  visit '/'
+  visit root_path
   fill_in 'Email', with: user.email
   fill_in 'Password', with: user.password
+  click_on 'Sign In'
+end
+
+def login_admin_user
+  admin_user = create_admin_user
+  visit admin_login_path
+  fill_in 'Email', with: admin_user.email
+  fill_in 'Password', with: admin_user.password
   click_on 'Sign In'
 end

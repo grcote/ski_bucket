@@ -21,5 +21,4 @@ class SecureTokens
       raise InvalidPasswordResetToken
     end
   end
-
 end
