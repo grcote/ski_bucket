@@ -1,4 +1,6 @@
-class SkiAreasController < ApplicationController
+class Admin::SkiAreasController < ApplicationController
+  before_action :require_admin
+
   def new
     @ski_area = SkiArea.new
   end
@@ -7,7 +9,7 @@ class SkiAreasController < ApplicationController
     @ski_area = SkiArea.create(ski_area_strong_params)
 
     if @ski_area.errors.messages.empty?
-      redirect_to ski_areas_path
+      redirect_to admin_ski_areas_path
     else
       render :new
     end
@@ -28,13 +30,13 @@ class SkiAreasController < ApplicationController
   def update
     @ski_area = SkiArea.find(params[:id])
     @ski_area.update_attributes(ski_area_strong_params)
-    redirect_to ski_area_path(@ski_area)
+    redirect_to admin_ski_area_path(@ski_area)
   end
 
   def destroy
     @ski_area = SkiArea.find(params[:id])
     @ski_area.destroy
-    redirect_to ski_areas_path
+    redirect_to admin_ski_areas_path
   end
 
   private
@@ -44,10 +46,6 @@ class SkiAreasController < ApplicationController
       :ski_area_name,
       :country,
       :state,
-      :pct_black,
-      :pct_blue,
-      :pct_green,
-      :visited,
       :logo_url,
       :skiable_acres
     )

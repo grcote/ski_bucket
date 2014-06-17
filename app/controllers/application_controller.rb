@@ -18,4 +18,17 @@ class ApplicationController < ActionController::Base
     session[:user_id] = nil
     session[:expire_time] = nil
   end
+
+  helper_method :require_admin
+  def require_admin
+    if current_user.nil? || admin_user? != true
+      flash[:error] = "You must be logged in as an admin to see this page"
+      redirect_to admin_login_path
+    end
+  end
+
+  helper_method :admin_user?
+  def admin_user?
+    current_user.admin == true
+  end
 end

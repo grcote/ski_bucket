@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20140615154955) do
     t.string  "country"
     t.string  "state"
     t.string  "logo_url"
-    t.boolean "visited"
     t.integer "skiable_acres"
   end
 

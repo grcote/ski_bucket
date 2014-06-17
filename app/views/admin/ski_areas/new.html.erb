@@ -1,7 +1,7 @@
 <h2>Create a Ski Area</h2>
 
 <div class="form_container">
-  <%= form_for @ski_area do |f| %>
+  <%= form_for @ski_area, as: :ski_area, url: admin_ski_areas_path(@ski_area), method: :post do |f| %>
 
     <div class="field_style">
       <%= f.label :ski_area_name, "Ski Area Name", class: "label_style", autofocus: 'autofocus' %>
@@ -21,11 +21,6 @@
     <div class="field_style">
       <%= f.label :skiable_acres, "Skiable Acres", class: "label_style" %>
       <%= f.text_field :skiable_acres, class: "field_style", size: "13" %>
-    </div>
-
-    <%= f.label :visited, "Visited Resort?", class: "label_style" %>
-    <div class="field_style">
-      <%= f.select(:visited, options_for_select([['No', 'false'], ['Yes', 'true']], 'false')) %>
     </div>
 
     <div class="field_style">

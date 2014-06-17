@@ -1,0 +1,9 @@
+<%= button_to "Create a Ski Area", admin_new_ski_area_path, class: "submit_button", method: "get" %>
+
+<% @ski_areas.each do |ski_area| %>
+  <div id="a_div">
+    <ul>
+      <li><%= link_to ski_area.ski_area_name, admin_ski_area_path(ski_area) %></li>
+    </ul>
+  </div>
+<% end %>

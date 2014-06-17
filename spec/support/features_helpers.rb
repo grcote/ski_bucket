@@ -34,3 +34,14 @@ def login_admin_user
   fill_in 'Password', with: admin_user.password
   click_on 'Sign In'
 end
+
+def add_ski_area
+  login_admin_user
+  click_on 'Create a Ski Area'
+  fill_in 'Ski Area Name', with: "Telluride"
+  fill_in 'Country', with: "USA"
+  fill_in 'State/Province', with: "CO"
+  fill_in 'Logo URL', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
+  fill_in 'Skiable Acres', with: "12,345"
+  click_on 'Create Ski Area'
+end

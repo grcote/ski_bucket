@@ -1,0 +1,9 @@
+<div id="a_div"><%= @ski_area.ski_area_name %></div>>
+
+<p><%= @ski_area.country %></p>
+<p><%= @ski_area.state %></p>
+<img src="<%= @ski_area.logo_url %>">
+<p><%= @ski_area.skiable_acres %></p>
+
+<%= button_to "Update Ski Area", admin_edit_ski_area_path(@ski_area), class: "submit_button", method: "get" %>
+<%= button_to "Delete Ski Area", admin_ski_area_path(@ski_area), class: "submit_button", method: "delete" %>
