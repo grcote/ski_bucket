@@ -1,6 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'dotenv'
+require 'dotenv-rails'
 Dotenv.load
 
 # Pick the frameworks you want:
