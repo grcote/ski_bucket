@@ -19,7 +19,7 @@ group :development, :test do
   gem 'capybara', '~> 2.2.1'
   gem 'pry', '~> 0.9.12.6'
   gem 'launchy', '~> 2.4.2'
-  gem 'dotenv', '~> 0.11.1'
+  gem 'dotenv-rails', '~> 0.11.1'
 end
 
 group :production do
