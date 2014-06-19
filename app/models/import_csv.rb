@@ -1,18 +1,21 @@
 class ImportCsv
 require 'CSV'
-  def initialize(data_file)
-    @data_file_path = data_file
+  def initialize(csv_string)
+    @csv_string = csv_string
   end
 
-  def read_csv
-    CSV.read(@data_file_path, :headers => true, :header_converters =>:symbol, :converters => :all)
-  end
-
-  def convert_to_hashes
-    return_array = []
-    csv_array = read_csv
-    csv_array.map { |row| return_array << row.to_hash }
-
-    return_array
+  def process
+    records_created = 0
+    CSV.parse(@csv_string, :headers => true, :header_converters =>:symbol, :converters => :all) do |row|
+      SkiArea.create!(
+        :ski_area_name => row[:ski_area_name],
+        :country => row[:country],
+        :state => row[:state],
+        :skiable_acres => row[:skiable_acres],
+        :logo_url => row[:logo_url]
+      )
+      records_created += 1
+    end
+    records_created
   end
 end

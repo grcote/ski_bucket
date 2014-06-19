@@ -26,5 +26,6 @@ Rails.application.routes.draw do
     get '/ski_areas/:id/edit', to: 'ski_areas#edit', as: :edit_ski_area
     put '/ski_areas/:id', to: 'ski_areas#update'
     delete '/ski_areas/:id', to: 'ski_areas#destroy'
+    post '/ski_areas/upload', to: 'ski_areas#upload', as: :upload_ski_areas
   end
 end

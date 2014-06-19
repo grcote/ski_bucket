@@ -1,9 +1,16 @@
 <%= button_to "Create a Ski Area", admin_new_ski_area_path, class: "submit_button", method: "get" %>
 
+<div id='csv_upload_container'>
+  <%= form_tag({:controller => 'ski_areas', :action => 'upload'}, :multipart => true) do %>
+    <%= file_field_tag 'csv_file' %>
+    <%= submit_tag('Submit') %>
+  <% end %>
+</div>
+
+<div class='ski_area_container'>
 <% @ski_areas.each do |ski_area| %>
-  <div id="a_div">
     <ul>
       <li><%= link_to ski_area.ski_area_name, admin_ski_area_path(ski_area) %></li>
     </ul>
-  </div>
 <% end %>
+</div>
