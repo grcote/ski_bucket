@@ -1,5 +1,5 @@
 class ImportCsv
-require 'CSV'
+
   def initialize(csv_string)
     @csv_string = csv_string
   end
