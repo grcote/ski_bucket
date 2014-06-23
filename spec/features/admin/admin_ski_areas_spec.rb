@@ -14,10 +14,10 @@ feature 'Admin of ski areas' do
     login_admin_user
     click_on 'Ski Areas'
     click_on 'Create a Ski Area'
-    fill_in 'Ski Area Name', with: "Telluride"
-    fill_in 'Country', with: "USA"
-    fill_in 'State/Province', with: "CO"
-    fill_in 'Logo URL', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
+    fill_in 'Ski Area Name', with: 'Telluride'
+    fill_in 'Country', with: 'USA'
+    fill_in 'State/Province', with: 'CO'
+    fill_in 'Logo URL', with: 'http://www.mjcomm.net/downloads/ski_logos/telluride.jpg'
     click_on 'Create Ski Area'
 
     within('.ski_area_container') do
@@ -32,7 +32,7 @@ feature 'Admin of ski areas' do
     click_on 'Ski Areas'
     click_on 'Telluride'
     click_on 'Update Ski Area'
-    fill_in 'Ski Area Name', with: "Crested Butte"
+    fill_in 'Ski Area Name', with: 'Crested Butte'
     click_on 'Update Ski Area'
 
     within('#ski_area_name') do
@@ -44,10 +44,10 @@ feature 'Admin of ski areas' do
     login_admin_user
     click_on 'Ski Areas'
     click_on 'Create a Ski Area'
-    fill_in 'Ski Area Name', with: ""
-    fill_in 'Country', with: "USA"
-    fill_in 'State/Province', with: "CO"
-    fill_in 'Logo URL', with: "http://www.mjcomm.net/downloads/ski_logos/telluride.jpg"
+    fill_in 'Ski Area Name', with: ''
+    fill_in 'Country', with: 'USA'
+    fill_in 'State/Province', with: 'CO'
+    fill_in 'Logo URL', with: 'http://www.mjcomm.net/downloads/ski_logos/telluride.jpg'
     click_on 'Create Ski Area'
 
     expect(current_path).to eq(admin_ski_areas_path)
@@ -74,7 +74,7 @@ feature 'Admin of ski areas' do
     login_admin_user
     click_on 'Ski Areas'
     within('#csv_upload_container') do
-      page.attach_file("csv_file", '/Users/gerard/gSchoolWork/ski_bucket/spec/fixtures/ski_area_data.csv')
+      page.attach_file("csv_file", 'spec/fixtures/ski_area_data.csv')
     end
     click_on 'Submit'
 

@@ -24,4 +24,14 @@ feature 'admin dashboard page' do
       expect(page).to have_content("Hello Bode, welcome to the Ski Bucket Admin Dashboard")
     end
   end
+
+  scenario 'if admin is currently logged in and tries to access admin/login page, redirected to dashboard with message' do
+    login_admin_user
+    visit admin_login_path
+
+    within('#flash_alert_wrapper') do
+      expect(page).to have_content("You are already logged in as an admin")
+    end
+    expect(current_path).to eq(admin_dashboard_path)
+  end
 end

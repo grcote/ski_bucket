@@ -31,4 +31,9 @@ class ApplicationController < ActionController::Base
   def admin_user?
     current_user.admin == true
   end
+
+  helper_method :admin_user_logged_in?
+  def admin_user_logged_in?
+    logged_in? && admin_user?
+  end
 end

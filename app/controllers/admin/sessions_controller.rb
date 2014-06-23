@@ -1,6 +1,11 @@
 class Admin::SessionsController < ApplicationController
   def new
-    @user = User.new
+    if admin_user_logged_in?
+      flash[:error] = "You are already logged in as an admin"
+      redirect_to admin_dashboard_path
+    else
+      @user = User.new
+    end
   end
 
   def create
