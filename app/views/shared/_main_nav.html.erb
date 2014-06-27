@@ -1,7 +1,10 @@
 <nav id="mainNav">
   <ul>
-    <li><a href="#">Home</a></li>
+    <li><%= link_to "Home", root_path %></li>
     <li><a href="#">My Bucket</a></li>
     <li><a href="#">About</a></li>
+    <% if admin_user_logged_in? %>
+    <li><%= link_to "Dashboard", admin_dashboard_path %></li>
+    <% end %>
   </ul>
 </nav>

@@ -20,7 +20,7 @@ feature 'Admin of ski areas' do
     fill_in 'Logo URL', with: 'http://www.mjcomm.net/downloads/ski_logos/telluride.jpg'
     click_on 'Create Ski Area'
 
-    within('.ski_area_container') do
+    within first('.page_section') do
       expect(page).to have_content("Telluride")
     end
     expect(current_path).to eq(admin_ski_areas_path)
@@ -64,7 +64,7 @@ feature 'Admin of ski areas' do
     click_on 'Telluride'
     click_on 'Delete Ski Area'
 
-    within('.ski_area_container') do
+    within first('.page_section') do
       expect(page).to_not have_content("Telluride")
       expect(current_path).to eq(admin_ski_areas_path)
     end
@@ -73,10 +73,8 @@ feature 'Admin of ski areas' do
   scenario 'Admin can upload a CSV of ski area data to the database' do
     login_admin_user
     click_on 'Ski Areas'
-    within('#csv_upload_container') do
-      page.attach_file("csv_file", 'spec/fixtures/ski_area_data.csv')
-    end
-    click_on 'Submit'
+    page.attach_file("csv_file", 'spec/fixtures/ski_area_data.csv')
+    click_on 'Upload File'
 
     within('#flash_alert_wrapper') do
       expect(page).to have_content("Congratulations, you've uploaded 2 ski area records")

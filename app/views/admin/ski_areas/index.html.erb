@@ -1,16 +1,19 @@
-<%= button_to "Create a Ski Area", admin_new_ski_area_path, class: "submit_button", method: "get" %>
+<div class='page_section'>
+  <h2>Ski Areas in the Database</h2>
+  <p><i>Click on area's name to view and edit information or create a new one below</i></p>
 
-<div id='csv_upload_container'>
-  <%= form_tag({:controller => 'ski_areas', :action => 'upload'}, :multipart => true) do %>
-    <%= file_field_tag 'csv_file' %>
-    <%= submit_tag('Submit') %>
-  <% end %>
+  <ul>
+    <%= render partial: "ski_areas", collection: @ski_areas %>
+  </ul>
+
+  <%= button_to "Create a Ski Area", admin_new_ski_area_path, class: "button blue small", method: "get" %>
 </div>
-
-<div class='ski_area_container'>
-<% @ski_areas.each do |ski_area| %>
-    <ul>
-      <li><%= link_to ski_area.ski_area_name, admin_ski_area_path(ski_area) %></li>
-    </ul>
-<% end %>
+<hr>
+<div class='page_section'>
+  <h4>Upload Multiple Ski Areas</h4>
+  <p></p>
+  <%= form_tag({:controller => 'ski_areas', :action => 'upload'}, :multipart => true) do %>
+    <%= file_field_tag 'csv_file', id: "file_upload_field" %>
+    <%= submit_tag('Upload File', { class: "button blue small" }) %>
+  <% end %>
 </div>
