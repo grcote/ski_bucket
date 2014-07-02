@@ -35,7 +35,7 @@ feature 'Admin of ski areas' do
     fill_in 'Ski Area Name', with: 'Crested Butte'
     click_on 'Update Ski Area'
 
-    within('#ski_area_name') do
+    within ('.page_section') do
       expect(page).to have_content("Crested Butte")
     end
   end

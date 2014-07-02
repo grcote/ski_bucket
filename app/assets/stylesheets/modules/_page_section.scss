@@ -1,3 +1,7 @@
+.page_section h1 {
+  margin: .33em 0 .33em 0
+}
+
 .page_section h2 {
   margin-top: .5em;
   margin-bottom: 0;
@@ -9,7 +13,9 @@
 }
 
 .page_section p {
+  font-size: 1em;
   margin-top: 0;
+  padding-left: .5em;
 }
 
 .page_section ul {

@@ -1,6 +1,6 @@
 class AddFieldsToSkiAreas < ActiveRecord::Migration
   def change
-    add_column :ski_areas, :country, :string
+    add_column(:ski_areas, :country, :string)
     add_column :ski_areas, :state, :string
     add_column :ski_areas, :pct_black, :integer
     add_column :ski_areas, :pct_blue, :integer

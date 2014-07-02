@@ -1,9 +1,20 @@
-<div id='ski_area_name'><%= @ski_area.ski_area_name %></div>>
+<div class='page_section'>
 
-<p><%= @ski_area.country %></p>
-<p><%= @ski_area.state %></p>
-<img src="<%= @ski_area.logo_url %>">
-<p><%= @ski_area.skiable_acres %></p>
+  <h1><%= @ski_area.ski_area_name %></h1>
 
-<%= button_to "Update Ski Area", admin_edit_ski_area_path(@ski_area), class: "submit_button", method: "get" %>
-<%= button_to "Delete Ski Area", admin_ski_area_path(@ski_area), class: "submit_button", method: "delete" %>
+  <div class='data_label'>Country:</div>
+  <div class='data_field'><%= @ski_area.country %></div>
+
+  <div class='data_label'>State/Province:</div>
+  <div class='data_field'><%= @ski_area.state %></div>
+
+  <div class='data_label'>Logo URL:</div>
+  <div class='data_field'><%= @ski_area.logo_url %></div>
+
+  <div class='data_label'>Skiable Acres:</div>
+  <div class='data_field'><%= @ski_area.skiable_acres %></div>
+
+  <%= button_to "Update Ski Area", admin_edit_ski_area_path(@ski_area), class: "button small blue", method: "get" %>
+  <%= button_to "Delete Ski Area", admin_ski_area_path(@ski_area), class: "button small blue", method: "delete" %>
+
+</div>
