@@ -81,4 +81,3 @@ feature 'Admin of ski areas' do
     end
   end
 end
-

@@ -10,6 +10,10 @@ This application tracks the ski areas I've skied and lists the areas I'd like to
 
 [Staging](http://ski-bucket-staging.herokuapp.com/) | [Production](http://ski-bucket.herokuapp.com/)
 
+##Mailcatcher
+Note that this app uses the [MailCatcher](http://rdoc.info/gems/mailcatcher) gem in development. To use the gem in developmnet, from the command line run:
+    `gem install mailcatcher`
+
 ##How to Contribute to Ski Area Bucket List
 
 * Visit the repository: https://github.com/grcote/ski_bucket
