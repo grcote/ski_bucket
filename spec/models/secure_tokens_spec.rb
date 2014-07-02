@@ -3,7 +3,7 @@ require 'spec_helper'
 describe SecureTokens do
   include ActiveSupport::Testing::TimeHelpers
 
-  let(:user) { User.new(id: 6) }
+  let(:user) { User.new(:id => 6) }
   let!(:token) {SecureTokens.password_reset_for(user)}
 
   it 'returns user id for a valid token' do

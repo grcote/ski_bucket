@@ -2,12 +2,12 @@ require 'spec_helper'
 
 feature 'Create a user acount' do
   scenario 'User can create an account' do
-    register_user(first_name: "Seth", last_name: "Geyer")
+    register_user(first_name: 'Seth', last_name: 'Geyer')
     expect(page).to have_content("Hello Seth, let's turn and burn!")
   end
 
   scenario 'User cannot create an account without an email' do
-    register_user(email: "")
+    register_user(:email => "")
     expect(page).to have_content("Email can't be blank")
   end
 
@@ -18,12 +18,12 @@ feature 'Create a user acount' do
   end
 
   scenario 'User cannot create an account if password & confirmation do not match' do
-    register_user(password_confirmation: "password")
+    register_user(:password_confirmation => 'password')
     expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
   scenario 'User cannot create an account with a password less than 6 characters' do
-    register_user(password: "passwor", password_confirmation: "passwor")
+    register_user(:password => 'passwor', :password_confirmation => 'passwor')
     expect(page).to have_content("Password is too short")
   end
 
@@ -53,7 +53,7 @@ feature 'Create a user acount' do
     login_user
     click_on 'My Account'
     click_on 'Update Email'
-    fill_in 'Enter new Email', with: "gp@bigair.com"
+    fill_in 'Enter new Email', with: 'gp@bigair.com'
     click_on 'Update Email'
     expect(page).to have_content("Account email successfully updated to gp@bigair.com")
   end
