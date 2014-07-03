@@ -1,0 +1,27 @@
+<h2>Update User Account</h2>
+
+<div class="form_container">
+
+  <%= form_for @user, as: :user, url: admin_user_path(@user), method: :put do |f| %>
+
+    <div class="field_container">
+      <%= f.label :first_name, "First Name", class: "label_style" %>
+      <%= f.text_field :first_name, class: "field_style" %>
+    </div>
+
+    <div class="field_container">
+      <%= f.label :last_name, "Last Name", class: "label_style" %>
+      <%= f.text_field :last_name, class: "field_style" %>
+    </div>
+
+    <div class="field_container">
+      <%= f.label :email, "Email", class: "label_style" %>
+      <%= f.email_field :email, class: "field_style" %>
+    </div>
+
+    <div class="field_container">
+      <%= f.submit "Update User", class: "button small blue" %>
+    </div>
+
+  <% end %>
+</div>

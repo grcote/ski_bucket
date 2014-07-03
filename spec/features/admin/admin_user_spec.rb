@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Admin of users' do
+feature 'Admin of Users' do
   scenario 'if user is not logged in they cannot access the dashboard page' do
     visit admin_dashboard_path
 
@@ -54,14 +54,28 @@ feature 'Admin of users' do
     end
 
     within ('.page_section') do
-      expect(page).to have_content("Glenn")
-      expect(page).to have_content("Plake")
-      expect(page).to have_content("glennplake@skier.com")
+      expect(page).to have_content("Glenn Plake")
     end
     expect(current_path).to eq(admin_users_path)
   end
 
-  scenario 'Only a admin can visit the create a user page in the Admin Dashboard section' do
+  scenario 'admin can modify user account information' do
+    user = create_user
+    login_admin_user
+    visit admin_dashboard_path
+    click_on 'Users'
+    click_on user.full_name
+    click_on 'Update User'
+    fill_in 'Email', with: 'b_miller@skier.com'
+    click_on 'Update User'
+
+    within('.page_section') do
+      expect(page).to have_content("b_miller@skier.com")
+    end
+    expect(current_path).to eq(admin_user_path(user))
+  end
+
+  scenario 'only a admin can visit the create a user page in the Admin Dashboard section' do
     login_user
     visit admin_users_path
 

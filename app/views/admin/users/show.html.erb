@@ -1,0 +1,17 @@
+<div class='page_section'>
+
+  <h1><%= @user.full_name %></h1>
+
+  <div class='data_label'>First Name:</div>
+  <div class='data_field'><%= @user.first_name %></div>
+
+  <div class='data_label'>Last Name:</div>
+  <div class='data_field'><%= @user.last_name %></div>
+
+  <div class='data_label'>Email:</div>
+  <div class='data_field'><%= @user.email %></div>
+
+  <%= button_to "Update User", admin_edit_user_path, method: "get", class: "button small blue" %>
+  < %= button_to "Delete Account", user_path, method: "delete", class: "button blue" %>
+
+</div>

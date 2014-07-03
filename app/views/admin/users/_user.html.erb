@@ -1,1 +1,1 @@
-<li><%= user.first_name %> <%= user.last_name %> <%= user.email %></li>
+<li><%= link_to "#{user.full_name}", admin_user_path(user) %></li>
