@@ -1,10 +1,12 @@
 require 'spec_helper'
 
-feature 'admin dashboard page' do
+feature 'Admin of users' do
   scenario 'if user is not logged in they cannot access the dashboard page' do
-  visit admin_dashboard_path
+    visit admin_dashboard_path
 
-  expect(page).to have_content("You must be logged in as an admin to see this page")
+    within('#flash_alert_wrapper') do
+      expect(page).to have_content("You must be logged in as an admin to see this page")
+    end
   end
 
   scenario 'non-admin user is not allowed to login to dashboard page' do

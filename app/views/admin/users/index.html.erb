@@ -1,0 +1,9 @@
+<div class="page_section">
+  <h2>Users in the Database</h2>
+  <p><i>Click on user's name to view and edit information or create a new one below</i></p>
+
+  <ul>
+    <%= render partial: "user", collection: @users %>
+  </ul>
+  <%= button_to "Create User Account", admin_new_user_path, class: "button blue small", method: "get" %>
+</div>
