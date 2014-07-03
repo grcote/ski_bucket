@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   root to: 'pages#index'
-  #resources :ski_areas
   resources :users
 
   get '/login', to: 'sessions#new', as: :login
@@ -27,5 +26,10 @@ Rails.application.routes.draw do
     put '/ski_areas/:id', to: 'ski_areas#update'
     delete '/ski_areas/:id', to: 'ski_areas#destroy'
     post '/ski_areas/upload', to: 'ski_areas#upload', as: :upload_ski_areas
+
+    get '/users', to: 'users#index'
+    get '/users/new', to: 'users#new', as: :new_user
+    get '/users/:id', to: 'users#show', as: :user
+    post '/users', to: 'users#create'
   end
 end

@@ -66,8 +66,8 @@ feature 'Admin of ski areas' do
 
     within first('.page_section') do
       expect(page).to_not have_content("Telluride")
-      expect(current_path).to eq(admin_ski_areas_path)
     end
+    expect(current_path).to eq(admin_ski_areas_path)
   end
 
   scenario 'Admin can upload a CSV of ski area data to the database' do

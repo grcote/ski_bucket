@@ -1,35 +1,35 @@
 <h2>Create a Ski Area</h2>
 
-<div class="form_container">
+<div class='form_container'>
   <%= form_for @ski_area, as: :ski_area, url: admin_ski_areas_path(@ski_area), method: :post do |f| %>
 
-    <div class="field_container">
-      <%= f.label :ski_area_name, "Ski Area Name", class: "label_style", autofocus: 'autofocus' %>
-      <%= f.text_field :ski_area_name, class: "field_style" %>
+    <div class='field_container'>
+      <%= f.label :ski_area_name, 'Ski Area Name', class: 'label_style', autofocus: 'autofocus' %>
+      <%= f.text_field :ski_area_name, class: 'field_style' %>
     </div>
 
-    <div class="field_container">
-      <%= f.label :country, "Country", class: "label_style" %>
-      <%= f.text_field :country, class: "field_style" %>
+    <div class='field_container'>
+      <%= f.label :country, 'Country', class: 'label_style' %>
+      <%= f.text_field :country, class: 'field_style' %>
     </div>
 
-    <div class="field_container">
-      <%= f.label :state, "State/Province", class: "label_style" %>
-      <%= f.text_field :state, class: "field_style" %>
+    <div class='field_container'>
+      <%= f.label :state, 'State/Province', class: 'label_style' %>
+      <%= f.text_field :state, class: 'field_style' %>
     </div>
 
-    <div class="field_container">
-      <%= f.label :skiable_acres, "Skiable Acres", class: "label_style" %>
-      <%= f.text_field :skiable_acres, class: "field_style" %>
+    <div class='field_container'>
+      <%= f.label :skiable_acres, 'Skiable Acres', class: 'label_style' %>
+      <%= f.text_field :skiable_acres, class: 'field_style' %>
     </div>
 
-    <div class="field_container">
-      <%= f.label :logo_url, "Logo URL", class: "label_style" %>
-      <%= f.text_field :logo_url, class: "field_style" %>
+    <div class='field_container'>
+      <%= f.label :logo_url, 'Logo URL', class: 'label_style' %>
+      <%= f.text_field :logo_url, class: 'field_style' %>
     </div>
 
-    <div class="field_container">
-      <%= f.submit "Create Ski Area", class: "button blue" %>
+    <div class='field_container'>
+      <%= f.submit 'Create Ski Area', class: 'button small blue' %>
     </div>
   <% end %>
 </div>

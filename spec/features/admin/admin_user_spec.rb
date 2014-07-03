@@ -34,4 +34,37 @@ feature 'admin dashboard page' do
     end
     expect(current_path).to eq(admin_dashboard_path)
   end
+
+  scenario 'admin can create new users' do
+    login_admin_user
+    visit admin_dashboard_path
+    click_on 'Users'
+    click_on 'Create User Account'
+    fill_in 'First Name', with: 'Glenn'
+    fill_in 'Last Name', with: 'Plake'
+    fill_in 'Email', with: 'glennplake@skier.com'
+    fill_in 'Password', with: 'iluvunicorns'
+    fill_in 'Confirm Password', with: 'iluvunicorns'
+    click_on 'Create Account'
+
+    within ('#flash_alert_wrapper') do
+      expect(page).to have_content("User successfully added")
+    end
+
+    within ('.page_section') do
+      expect(page).to have_content("Glenn")
+      expect(page).to have_content("Plake")
+      expect(page).to have_content("glennplake@skier.com")
+    end
+    expect(current_path).to eq(admin_users_path)
+  end
+
+  scenario 'Only a admin can visit the create a user page in the Admin Dashboard section' do
+    login_user
+    visit admin_users_path
+
+    within('#flash_alert_wrapper') do
+      expect(page).to have_content("You must be logged in as an admin to see this page")
+    end
+  end
 end
