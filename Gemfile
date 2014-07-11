@@ -15,8 +15,8 @@ gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'activerecord', '~> 4.1.0'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.14.2'
-  gem 'capybara', '~> 2.2.1'
+  gem 'rspec-rails', '~> 3.0.1'
+  gem 'capybara', '~> 2.4.1'
   gem 'pry', '~> 0.9.12.6'
   gem 'launchy', '~> 2.4.2'
   gem 'dotenv-rails', '~> 0.11.1'
