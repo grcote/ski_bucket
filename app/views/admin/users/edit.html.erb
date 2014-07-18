@@ -20,6 +20,13 @@
     </div>
 
     <div class="field_container">
+      <%= f.label :admin, "Site Administrator", class: "label_style" %>
+      <div class="input_container">
+      <%= f.check_box(:admin, {class: "checkbox_style"}, "true", "false")  %>
+      </div>
+    </div>
+
+    <div class="field_container">
       <%= f.submit "Update User", class: "button small blue" %>
     </div>
 

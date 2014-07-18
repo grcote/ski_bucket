@@ -11,7 +11,14 @@
   <div class='data_label'>Email:</div>
   <div class='data_field'><%= @user.email %></div>
 
+  <div class='data_label'>Site Admin Status:</div>
+  <% if @user.admin %>
+    <div class='data_field'>Active</div>
+  <% else %>
+    <div class='data_field'>Inactive</div>
+  <% end %>
+
   <%= button_to "Update User", admin_edit_user_path, method: "get", class: "button small blue" %>
-  < %= button_to "Delete Account", user_path, method: "delete", class: "button blue" %>
+  <%= button_to "Delete Account", admin_user_path, method: "delete", class: "button small blue" %>
 
 </div>

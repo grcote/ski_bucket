@@ -33,6 +33,13 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_user_path(@user)
   end
 
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    flash[:success] = "Account deleted"
+    redirect_to admin_users_path
+  end
+
   private
 
   def user_strong_params
@@ -41,7 +48,8 @@ class Admin::UsersController < ApplicationController
       :last_name,
       :email,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :admin
     )
   end
 end

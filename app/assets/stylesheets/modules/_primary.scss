@@ -1,29 +1,29 @@
 body {
-    /*background-color: #E5E5E5;*/
-    background-image: url(/images/background_image.gif);
-    color: black;
-    font-size: 87.5%; /* base font-size is 14px, this makes font 87.5% of 14px */
-    line-height: 1.5;
-    text-align: left;
-    font-family: 'Roboto', sans-serif;
+  /*background-color: #E5E5E5;*/
+  background-image: url(/images/background_image.gif);
+  color: black;
+  font-size: 87.5%; /* base font-size is 14px, this makes font 87.5% of 14px */
+  line-height: 1.5;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-    font-family: 'Fjalla One', sans-serif;
-    font-weight: normal;
-    text-transform: uppercase;
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 h2 {
-    font-family: 'Cantarell', sans-serif;
-    font-weight: 600;
-    letter-spacing: -1px;
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
 h3 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 h4 {
@@ -34,13 +34,13 @@ h4 {
 }
 
 p {
-    font-family: 'Cantarell', sans-serif;
-    font-weight: 300;
-    font-size: 1.1em;
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
 }
 
 #body_container {
-    padding: 1em;
+  padding: 1em;
 }
 
 a:link {

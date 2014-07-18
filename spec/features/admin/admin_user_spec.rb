@@ -5,7 +5,7 @@ feature 'Admin of Users' do
     visit admin_dashboard_path
 
     within('#flash_alert_wrapper') do
-      expect(page).to have_content("You must be logged in as an admin to see this page")
+      expect(page).to have_text("You must be logged in as an admin to see this page")
     end
   end
 
@@ -14,7 +14,7 @@ feature 'Admin of Users' do
     visit admin_dashboard_path
 
     within('#flash_alert_wrapper') do
-      expect(page).to have_content("You must be logged in as an admin to see this page")
+      expect(page).to have_text("You must be logged in as an admin to see this page")
     end
     expect(current_path).to eq(admin_login_path)
   end
@@ -23,7 +23,7 @@ feature 'Admin of Users' do
     login_admin_user
 
     within('#flash_alert_wrapper') do
-      expect(page).to have_content("Hello Bode, welcome to the Ski Bucket Admin Dashboard")
+      expect(page).to have_text("Hello Bode, welcome to the Ski Bucket Admin Dashboard")
     end
   end
 
@@ -32,12 +32,12 @@ feature 'Admin of Users' do
     visit admin_login_path
 
     within('#flash_alert_wrapper') do
-      expect(page).to have_content("You are already logged in as an admin")
+      expect(page).to have_text("You are already logged in as an admin")
     end
     expect(current_path).to eq(admin_dashboard_path)
   end
 
-  scenario 'admin can create new users' do
+  scenario 'admin can create new users that are admins' do
     login_admin_user
     visit admin_dashboard_path
     click_on 'Users'
@@ -47,14 +47,15 @@ feature 'Admin of Users' do
     fill_in 'Email', with: 'glennplake@skier.com'
     fill_in 'Password', with: 'iluvunicorns'
     fill_in 'Confirm Password', with: 'iluvunicorns'
+    check 'Site Administrator'
     click_on 'Create Account'
 
     within ('#flash_alert_wrapper') do
-      expect(page).to have_content("User successfully added")
+      expect(page).to have_text("User successfully added")
     end
 
     within ('.page_section') do
-      expect(page).to have_content("Glenn Plake")
+      expect(page).to have_text("Glenn Plake")
     end
     expect(current_path).to eq(admin_users_path)
   end
@@ -70,7 +71,7 @@ feature 'Admin of Users' do
     click_on 'Update User'
 
     within('.page_section') do
-      expect(page).to have_content("b_miller@skier.com")
+      expect(page).to have_text("b_miller@skier.com")
     end
     expect(current_path).to eq(admin_user_path(user))
   end
@@ -80,7 +81,33 @@ feature 'Admin of Users' do
     visit admin_users_path
 
     within('#flash_alert_wrapper') do
-      expect(page).to have_content("You must be logged in as an admin to see this page")
+      expect(page).to have_text("You must be logged in as an admin to see this page")
+    end
+  end
+
+  scenario 'an admin can change admin status of another user' do
+    user = create_user
+    login_admin_user
+    visit admin_dashboard_path
+    click_on 'Users'
+    click_on user.full_name
+    click_on 'Update User'
+    check 'Site Administrator'
+    click_on 'Update User'
+
+    expect(User.find(user.id).admin).to eq(true)
+  end
+
+  scenario 'an admin can delete a user' do
+    user = create_user
+    login_admin_user
+    visit admin_dashboard_path
+    click_on 'Users'
+    click_on user.full_name
+    click_on 'Delete Account'
+
+    within('#flash_alert_wrapper') do
+      expect(page).to have_text("Account deleted")
     end
   end
 end
