@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
   resources :users
+  resources :buckets
 
   get '/login', to: 'sessions#new', as: :login
   post '/login', to: 'sessions#create'
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   post '/password_reset', to: 'password_reset#create'
   get '/password_reset', to: 'password_reset#edit', as: :edit_password_reset
   put '/password_reset', to: 'password_reset#update'
+
+  get '/about', to: 'pages#about', as: :about
 
   namespace :admin do
     get '/login', to: 'sessions#new'

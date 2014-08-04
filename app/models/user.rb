@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_many :buckets
   validates :email, presence: true
   validates :first_name, presence: true
   validates :email, uniqueness: true

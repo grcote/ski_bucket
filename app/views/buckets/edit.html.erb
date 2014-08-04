@@ -1,0 +1,21 @@
+<h2>Update Bucket</h2>
+
+<div class='form_container'>
+  <%= form_for @bucket do |f| %>
+
+    <div class='field_container'>
+      <%= f.label :name, 'Bucket Name', class: 'label_style' %>
+      <%= f.text_field :name, class: 'field_style' %>
+    </div>
+
+    <div class='field_container'>
+      <%= f.label :description, 'Description', class: 'label_style' %>
+      <%= f.text_area :description, class: 'field_style' %>
+    </div>
+
+    <div class='field_container'>
+      <%= f.submit 'Update Bucket', class: 'blue small button' %>
+    </div>
+
+  <% end %>
+</div>

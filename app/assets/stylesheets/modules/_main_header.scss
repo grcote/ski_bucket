@@ -1,6 +1,6 @@
 #topHeader {
   width: 90%;
-  background-color: darkslategray;
+  background-color: #47A6CC;
   margin: 0 auto;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -42,7 +42,7 @@
 }
 
 #topHeader nav ul li a:hover {
-  color: red;
+  color: #B21237;
 }
 
 #topHeader nav ul li ul {
@@ -52,7 +52,7 @@
 
 #topHeader nav ul li:hover ul {
   visibility: visible;
-  background-color: darkslategray;
+  background-color: #47A6CC;
 }
 
 #topHeader nav ul li ul li a {

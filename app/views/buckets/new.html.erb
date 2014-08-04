@@ -1,0 +1,24 @@
+<h2>Create a Ski Bucket</h2>
+
+<div class='form_container'>
+
+  <div class='form_container'>
+    <%= form_for @bucket do |f| %>
+
+      <div class='field_container'>
+        <%= f.label :name, 'Bucket Name', class: 'label_style', autofocus: 'autofocus' %>
+        <%= f.text_field :name, class: 'field_style' %>
+      </div>
+
+      <div class='field_container'>
+        <%= f.label :description, 'Description', class: 'label_style' %>
+        <%= f.text_area :description, class: 'field_style' %>
+      </div>
+
+      <div class='field_container'>
+        <%= f.submit 'Create Bucket', class: 'button small blue' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

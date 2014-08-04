@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_strong_params)
+    @user = User.new(user_strong_params.merge(admin: true))
+    p @user
     if @user.save
       Notifier.welcome_email(@user).deliver
       session[:user_id] = @user.id
@@ -49,7 +50,8 @@ class UsersController < ApplicationController
       :last_name,
       :email,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :admin
     )
   end
 end

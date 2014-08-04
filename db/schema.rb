@@ -11,25 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615154955) do
+ActiveRecord::Schema.define(version: 20140718234822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "buckets", force: true do |t|
+    t.integer  "user_id",     null: false
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "ski_areas", force: true do |t|
-    t.string  "ski_area_name"
-    t.string  "country"
-    t.string  "state"
-    t.string  "logo_url"
-    t.integer "skiable_acres"
+    t.string   "ski_area_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "country"
+    t.string   "state"
+    t.string   "logo_url"
+    t.integer  "skiable_acres"
   end
 
   create_table "users", force: true do |t|
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "email"
-    t.string  "password_digest"
-    t.boolean "admin"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_digest"
+    t.boolean  "admin"
   end
 
 end
