@@ -1,10 +1,12 @@
 <nav id="mainNav">
   <ul>
     <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "My Buckets", buckets_path %></li>
+    <% if logged_in? %>
+      <li><%= link_to "My Buckets", buckets_path %></li>
+    <% end %>
     <li><%= link_to "About", about_path %></li>
     <% if admin_user_logged_in? %>
-    <li><%= link_to "Dashboard", admin_dashboard_path %></li>
+      <li><%= link_to "Dashboard", admin_dashboard_path %></li>
     <% end %>
   </ul>
 </nav>

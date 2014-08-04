@@ -15,7 +15,7 @@ class BucketsController < ApplicationController
   end
 
   def index
-    @buckets = Bucket.all #.where(user_id: current_user.id)
+    @buckets = Bucket.where(user_id: current_user.id)
   end
 
   def show
@@ -28,7 +28,7 @@ class BucketsController < ApplicationController
 
   def update
     @bucket = Bucket.find(params[:id])
-    @bucket.update(bucket_strong_params)
+    @bucket.update_attributes(bucket_strong_params)
     flash[:success] = 'Bucket updated'
     redirect_to bucket_path(@bucket)
   end
