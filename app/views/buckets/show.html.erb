@@ -1,0 +1,11 @@
+<div class='page_section'>
+
+  <h1><%= @bucket.name %></h1>
+
+  <div class='data_label'>Description:</div>
+  <div class='data_field'><%= @bucket.description %></div>
+
+  <%= button_to "Update Bucket", edit_bucket_path(@bucket), class: "button small blue", method: "get" %>
+  <%= button_to "Delete Bucket", bucket_path(@bucket), class: "button small blue", method: "delete" %>
+
+</div>

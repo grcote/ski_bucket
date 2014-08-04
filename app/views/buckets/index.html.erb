@@ -1,0 +1,10 @@
+<div class='page_section'>
+  <h2>My Ski Buckets</h2>
+  <p><i>Click on a bucket to vew its contents</i></p>
+
+  <ul>
+    <%= render partial: "buckets", collection: @buckets %>
+  </ul>
+
+  <%= button_to "Create Bucket", new_bucket_path, class: "button blue small", method: "get" %>
+</div>

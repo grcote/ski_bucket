@@ -5,6 +5,7 @@
 .field_container {
   width: 40%;
   margin: 0 auto;
+  display: block;
 }
 
 .label_style {
@@ -14,7 +15,6 @@
   line-height: 18px;
   letter-spacing: -1px;
   width: 33%;
-  float: left;
   text-align: right;
   padding: 7px 10px 0 0;
   margin: 5px 0 0 0;

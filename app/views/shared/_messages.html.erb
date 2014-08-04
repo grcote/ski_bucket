@@ -22,6 +22,18 @@
   <% end %>
 <% end %>
 
+<% if @bucket %>
+  <% if !@bucket.errors.empty? %>
+    <div id="validation_error_wrapper">
+      <div class="validation_error">|
+        <% @bucket.errors.full_messages.each do |error| %>
+          <%= error %>&nbsp;|
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 <% if flash %>
   <div id="flash_alert_wrapper">
     <% flash.each do |key, value| %>
